@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+// import { Routes, Route } from 'react-router-dom';
+import Login from "./Component.js/Login";
+import Role from "./Component.js/Role";
+import Internal_User from "./Component.js/Internal_User";
+import User from "./Component.js/User";
+import AddInternaluser from "./Component.js/AddInternalUser";
+import { NavLink, Outlet, Route, Routes } from "react-router-dom";
+import { HomeCompo } from "./Component.js/Home";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<Login />}></Route>
+        <Route path="home" element={<HomeCompo />}></Route>
+        <Route path="addinternaluser" element={<AddInternaluser />}></Route>
+        <Route path="internaluser" element={<Internal_User />}></Route>
+        <Route path="/internaluser/role" element={<Role />}></Route>
+      </Routes>
+     
+    </>
   );
 }
 
