@@ -1,20 +1,21 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Stack from '@mui/material/Stack';
+import Stack from "@mui/material/Stack";
 import { Button } from "@mui/material";
-import TextField from "@mui/material";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [passw, setPassw] = useState("");
   const navigate = useNavigate();
+
   const submitThis = (e) => {
     e.preventDefault();
     if (email === "admin" && passw === "admin") {
-       alert ('wc admin')
+      alert("wc admin");
+      localStorage.setItem("Admin", "Admin");
       navigate("/addinternaluser");
     } else {
-      alert("Invalid login credentials");
+      alert("Invalid login credentials", { replace: true });
     }
   };
   return (
@@ -29,22 +30,23 @@ const Login = () => {
               id="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              />
+            />
 
-              <label htmlFor="passw">Password : </label>
-              <input
-                type="password"
-                name="passw"
-                id="passw"
-                value={passw}
-                onChange={(e) => setPassw(e.target.value)}
-              />
-            
+            <label htmlFor="passw">Password : </label>
+            <input
+              type="password"
+              name="passw"
+              id="passw"
+              value={passw}
+              onChange={(e) => setPassw(e.target.value)}
+            />
           </div>
           <br />
-         
+
           <Stack spacing={2} direction="row">
-            <Button variant="outlined" type="submit">Login</Button>
+            <Button variant="outlined" type="submit">
+              Login
+            </Button>
           </Stack>
           {/* <button type="submit">Login</button> */}
         </form>

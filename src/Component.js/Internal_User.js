@@ -8,6 +8,8 @@ import "ag-grid-community/styles/ag-theme-alpine.css";
 
 // import { data } from "./data";
 import { useLocation, useNavigate } from "react-router-dom";
+import { Routes, Route  } from "react-router-dom";
+import Role from "./Role";
 
 // import { EuiIcon } from "@elastic/eui";
 
@@ -56,19 +58,7 @@ const Internal_User = () => {
     {
       lockVisible: true,
 
-      cellRenderer: (params) => (
-        <div>
-          {/* <EuiIcon
-            type="pencil"
-            onClick={() => handleEditButton(params.node.id)}
-          />
-          <EuiIcon
-            type="trash"
-            onClick={() => handleDelete(params.data.id)}
-            style={{ marginLeft: "40px" }}
-          /> */}
-        </div>
-      ),
+     
     },
   ];
 
@@ -100,7 +90,7 @@ const Internal_User = () => {
     setRowData(newRows);
   };
   const handleCreateRoleClick = () => {
-    navigate("role");
+    navigate("/role");
   };
 
   const onFilterTextBoxChange = (e) => {
@@ -176,6 +166,7 @@ const Internal_User = () => {
             Create Role
           </button>
         </div>
+        
         <div style={{ marginTop: "20px" }}></div>
         <div
           style={{

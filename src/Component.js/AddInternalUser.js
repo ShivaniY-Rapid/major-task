@@ -7,7 +7,6 @@ const AddInternalUser = () => {
     name: "",
     password: "",
     confirm_password: "",
-    // roles: [],
   };
 
   const [input, setInput] = useState(userObject);
@@ -22,7 +21,6 @@ const AddInternalUser = () => {
   function createUser(event) {
     event.preventDefault();
     if (input.password === input.confirm_password) {
-      // setUser([...user, input]);
       setInput({ name: "", password: "", confirm_password: "" });
     } else {
       alert("password not matched");

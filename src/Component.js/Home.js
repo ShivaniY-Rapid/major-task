@@ -20,10 +20,13 @@ export const HomeCompo = () => {
           }}
         >
           <Link to="addinternaluser" style={{ marginBottom: "10px" }}>
-            {" "}
             Create User
           </Link>
-          <Link to="internaluser"> Display User</Link>
+          <Link to="internaluser" style={{ marginBottom: "10px" }}> Internal Users</Link>
+          <Link to="role" style={{ marginBottom: "10px" }}> Roles</Link>
+          <Link to="permissions"> Permissions</Link>
+
+
         </nav>
         <Outlet />
       </>

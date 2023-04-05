@@ -10,7 +10,6 @@ export const Navbar = () => {
         <NavLink to="/internaluser"> Display Internal User</NavLink>
         <NavLink to="/role">Role Permissions</NavLink>
       </nav>
-      <Outlet />
     </div>
   );
 };
